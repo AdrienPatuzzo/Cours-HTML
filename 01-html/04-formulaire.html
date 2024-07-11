@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours HTML - Formulaires</title>
+</head>
+<body>
+    <!-- 
+        Un formulaire commence forcément par une balise "form" 
+        Avec deux attributs "action" et "method"
+        Action indique vers quel page sont envoyées les données du formulaire
+        Method, de quel façon elles sont envoyés
+    -->
+    <form action="http://google.com/search" method="get">
+        <!-- 
+            La balise input est la plus classique des formulaires.
+            Elle prend au moins deux attributs "type" et "name"
+            Type indique la forme et les règles du champ
+            name permet de l'identifier et doit être unique dans un formulaire
+        -->
+        <input type="text" name="q">
+        <!-- 
+            Le type "submité" crée un bouton de soumission 
+            dont le texte est indiqué dans l'attribut "value" 
+        -->
+        <input type="submit" value="Envoyer">
+    </form>
+    <!-- 
+        La mrthod "get" permet d'envoyer les données directement via l'url
+        elles sont donc visible de tous
+        Alors que la method "post" envoi les données dans le corps de la requête,
+        de façon caché et donc plus scurisé.
+    -->
+    <form action="./03-tableau.html" method="post">
+        <!-- 
+            L'attribut "for" du label doit contenir l'id du champ auquel il correspond. 
+            Il permet de selectionner le champ en cliquant sur le label 
+        -->
+        <label for="anniv">Date d'Anniversaire :</label>
+        <input type="date" name="birthday" id="anniv">
+        <br>
+        <!-- 
+            l'id et le name n'ont pas besoin d'être les même
+            "required" permet d'indiquer que le champ doit être rempli 
+            pour pouvoir valider le forumulaire 
+            "placeholder" permet d'afficher un text expliquant le rôle du champ
+            et disparaissant lorsqu'on commence à le remplir
+        -->
+        <input type="email" name="email" id="email" required placeholder="Votre Email">
+        <br>
+        <!-- 
+            Tout ce qui est fait en front est pour le confort de l'utilisateur,
+            Mais n'est en aucun cas de la sécurité, car peut facilement être modifié 
+        -->
+        <label for="pass">Votre password</label>
+        <input type="password" name="pass" id="pass">
+        <br>
+        <!-- 
+            le type file ne fonctionne qu'en POST
+            Et on doit ajouter l'attribut suivant sur la balise "form"
+                * enctype="multipart/form-data" 
+        -->
+        <input type="file" name="fichier" id="fichier">
+        <br>
+        <label for="age">êtes vous vieux ?</label>
+        <!-- 
+            les inputs peuvent avoir des attributs optionnels dépendant de leur type
+            Par exemple number peut recevoir 
+            - un minimum
+            - un maximum
+            - et des étapes (step)
+        -->
+        <input type="number" name="age" id="age" min="5" max="100" step="4">
+        <!-- 
+            le type hidden ne s'affiche pas pour l'utilisateur
+            il permet au développeur de transférer des informations qui n'ont pas à être touché par l'utilisateur.
+        -->
+        <input type="hidden" name="secret" value="les formulaires vous cache des choses">
+        <br>
+        <!-- 
+            permet de gérer les grands texte et les sauts à la ligne
+        -->
+        <textarea name="comment" id="comment" placeholder="commente ton code"></textarea>
+        <br>
+        <!-- 
+            Le select permet un menu déroulant
+            chaque option du menu est représenté par une balise option 
+            la valeur envoyé est celle mit en "value" et non le texte de l'option 
+        -->
+        <select name="repas" id="repas">
+            <option value="pizza">Vive la pizza !</option>
+            <option value="poutine">Mangez canadien !</option>
+            <option value="okonomiyaki">Mangez Japonais !</option>
+        </select>
+        <fieldset>
+            <!-- 
+                L'input de type radio est le seul qui peut avoir le même nom plusieurs fois.
+                Cela permet de ne pouvoir en selectionner qu'un seul
+            -->
+            <legend>Choisi ton Langage préféré</legend>
+            <input type="radio" name="Langage" id="html" value="html">
+            <label for="html">Vive HTML !</label>
+            <input type="radio" name="Langage" id="css" value="css">
+            <label for="css">Vive CSS !</label>
+            <input type="radio" name="Langage" id="js" value="js">
+            <label for="js">Vive Javascript !</label>
+        </fieldset>
+        <fieldset>
+            <legend>Choisi des catégories</legend>
+            <!-- 
+                Pour les radio et les checkbox, si aucune "value" n'est précisé, 
+                seule une value "on" sera envoyé pour indiqué qu'elle a bien été coché
+            -->
+            <input type="checkbox" name="aventure" id="aventure" value="aventure">
+            <label for="aventure">Vive l'aventure !</label>
+            <input type="checkbox" name="horreur" id="horreur" value="horreur">
+            <label for="horreur">Vive l'horreur !</label>
+            <input type="checkbox" name="romance" id="romance" value="romance">
+            <label for="romance">Vive la romance !</label>
+        </fieldset>
+        <hr>
+        <!-- 
+            button ou input:submit fonctionnent pour soumettre un formulaire 
+        -->
+        <button type="submit">Envoyer</button>
+        <input type="button" value="Je ne sert à rien">
+    </form>
+</body>
+</html>
