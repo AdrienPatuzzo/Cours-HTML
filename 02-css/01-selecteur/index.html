@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cours CSS - Les selecteurs</title> 
+    <style>
+        h1
+        {
+            background-color: aqua;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- header (h1>a>{Super Site Grandiose})+p{Ce site est vraiment super} -->
+    <header style="background-color: blue;">
+      <h1>
+        <a href="https://www.google.fr/search?q=carbonnade" target="_blank">
+          Super Site Grandiose
+        </a>
+      </h1>
+      <p>Ce site est vraiment super</p>
+      <!-- main>(p>lorem+span*3)+article>h2+p>{Gros article vraiment long} -->
+    </header>
+    <main>
+        <p>
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. </span>
+          <span
+            >Voluptas cumque molestias vitae repudiandae reprehenderit,
+          </span>
+          <span
+            >laboriosam eos quaerat dolore suscipit vel voluptatibus aliquam,
+            quasi debitis. Recusandae omnis explicabo cumque consequuntur
+            porro!</span
+          >
+        </p>
+        <article>
+          <h2></h2>
+          <p>Gros article vraiment long</p>
+        </article>
+      </main>
+    <!-- footer>ul>li*6.footer-list>{menu $} -->
+    <footer>
+        <ul>
+            <li class="footer-list" id="MenuImportant">
+                menu 1
+            </li>
+            <li class="footer-list">
+                <a href="https://www.amazon.fr">
+                    Amazon
+                </a>
+            </li>
+            <li class="footer-list peuImportant">
+                menu 3
+            </li>
+            <li class="footer-list">
+                <a href="https://wwww.marquiset.fr">
+                    Nolwenn
+                </a>
+            </li>
+            <li class="footer-list peuImportant">
+                menu 5
+            </li>
+            <li class="footer-list">
+                <a href="https://fr.wikipedia.org/wiki/amazonie">
+                    wikipedia
+                </a>   
+            </li>
+        </ul>
+    </footer> 
+  </body>
+</html>

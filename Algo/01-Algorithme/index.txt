@@ -1,0 +1,274 @@
+
+<!-- La programmation est avant tout une méthode d'analyse et non l'apprentissage d'un language
+     Pour bien comprendre le fonctionnement d'un programme, il convient de le décomposer.
+    Si langage interprété => code éxécuter dans application dédiée (html, css, batch)
+    Sinon code doit être converti en instruction exécutable 
+    (est passé à un programme appelé "complilateur" en ressort un code éxécutable sous forme d'un fichier exécutable (.exe .jar ...)) 
+-->
+
+alogrithme: soustraction;
+<!-- algorithme qui soustrait une date par un autre -->
+
+variables: date, age : entiers;
+
+début:
+date <- saisie (); <!-- L'utilisateur doit entrer une date de naissance-->
+age <- 2024 - date; <!-- initialisation de la variable age-->
+Ecrire (age); <!-- envois l'age de l'utilisateur  pour noel -->
+fin:
+
+<!-- Une variable est une zone mémoire qu'un programme va utiliser pour stocker temporairement une valeur 
+    une variable est un triplet (identificateur, type, valeur)
+    l'identificateur c'est son nom qui permet de la désigner tout au long de l'algorithme. 
+    Le type est fixe.
+    En revanche la valeur variera au cours de l'éxecution de l'algorithme.
+    variable ce modifie autant qu'on veut a l'inverse de la constante. 
+-->
+<!-- Lorsqu'on choisi un nom de variable, assez court mais aussi long que nécessaire pour être éxplicite
+    évitez les noms réservés, pas d'accent, ni caractères de ponctuation.
+    exemple de bonne pratique : camlcase => anneeDeNaissance ( snakecase => annee_de_naissance marche mais ne passe pas partout)
+-->
+
+<!------------ Exo 1 ----------------->
+
+algorithme: multiplication;
+<!-- calcul d'un carré d'un nombre -->
+variables: nombre, total: entiers;
+
+début:
+nombre <- saisie (nombre); 
+total <- nombre x nombre; 
+Ecrire(total); 
+fin 
+
+<!------------- Autre exo ------------->
+
+alogrithme: calcul TTC
+<!-- algorithme qui lit le prix HT, le nombre d'article, le taux TVA et le prix TTC -->
+Variables: prixHT, nombreArticle, TVA, prixTTC: entiers;
+
+début:
+prixHT < saisi (); 
+nombreArticle < saisi (); 
+tVA < saisi (); 
+prixTTC < (prixHT + (prix * tVA / 100 )) x nombreArticle; 
+Ecrire("prixTTC "& prixTTC);
+fin
+
+<!---------------- Exo du mercredi 31 juil ----------------->
+
+algorithme: texte mélangé
+<!-- Suite de mots formant une phrase -->
+Variables: chaine1, chaine2, chaine3: car; (chaine mais n'est pas utiliser)
+
+Début:
+chaine1 <- " belle marquise"; chaine2 <- "vos beaux yeux" ; chaine3 <- "me font mourir d'amour" ; Ecrire (chaine1 & " "
+                    & chaine2 & " " & chaine3); Ecrire (chaine1 & " " & chaine3 & " " & chaine2); Ecrire (chaine2 & " "
+                    & chaine3 & " " & chaine1); Ecrire (chaine2 & " " & chaine1 & " " & chaine3); fin <!----------------
+                    Exo 2 du mercredi 31 juil ----------------->
+
+                    algorithme: positif ou négatif
+                    <!-- indique si le nombre est positif ou négatif -->
+                    Variables: nombre: entier !=0;
+
+                    début:
+                    nombre < saisi (); Si (nombre> 0) alors
+                        Ecrire (positif);
+                        Sinon
+                        Ecrire(negatif);
+                        finSi;
+                        fin
+
+                        <!-- Si on prends en compte le 0 -->
+
+                        début:
+                        nombre < saisi (); Si (nombre> 0) alors
+                            Ecrire (positif);
+                            Sinon Si (nombre = 0) alors
+                            Ecrire ("Le nombre "& nombre & " est null");
+                            Sinon
+                            Ecrire(negatif);
+                            finSi;
+                            Fin
+
+                            <!---------------- Exo 3 du mercredi 31 juil ----------------->
+
+                            algorithme: produit positif ou négatif
+                            <!-- détermine si le produit de deux nombres et positif ou négatif -->
+                            variables: nombre1, nombre2: entier;
+
+                            début:
+                            nombre1 < saisi () ; nombre2 < saisi () ; Si (nombre1 < 0 ou nombre2 < 0) Ecrire (negatif);
+                                Sinon Si (nombre1> 0 et nombre2 > 0) alors
+                                Ecrire (positif);
+                                Sinon
+                                Ecrire ("positif")
+                                finSi;
+                                fin
+
+                                <!---------------- Exo 4 du mercredi 31 juil ----------------->
+                                algorithme: ordre alphabetique
+                                <!-- informe si les noms sont rangés dans l'ordre alphabétique -->
+                                variables: nom1, nom2, nom3: car;
+
+                                début:
+                                nom1 <- saisi (); nom2 <- saisi () ; nom3 <- saisi () ; Si (nom1> nom2 et nom2 > nom3)
+                                    alors
+                                    Ecrire ("vrais");
+                                    Sinon
+                                    Ecrire ("faux");
+                                    finSi;
+                                    fin
+
+
+                                    <!---------------- Exo 5 du mercredi 31 juil ----------------->
+
+                                    algorithme: catégorie
+                                    <!-- catégorie d’un enfant -->
+                                    variables: age: Entier
+
+                                    début:
+                                    age <- saisi () ; Si (age < 6) alors Ecrire ("il n'y pas de catégorie"); Sinon Si
+                                        (age=6 et age=7) alors Ecrire (Poussin); Sinon Si (age=8 et age=9) alors Ecrire
+                                        (Pupille); Sinon Si (age=10 et age=11) alors Ecrire ("minime"); Sinon Si (age>=
+                                        12)
+                                        alors Ecrire ("Cadet");
+                                        finSi;
+                                        fin
+
+
+<!---------------- Exo 6 du mercredi 31 juil ----------------->
+
+algorithme: omniscient
+<!-- prédit l'avenir en affichant l'heure qu'il sera une minute plus tard -->
+variables: heures, minutes : entiers;
+
+début:
+Heures <- saisi (); 
+Minutes <- saisi (); 
+
+Si (heures=23 et minutes=59) alors
+Ecrire(00h00); 
+SinonSi (minutes=59) alors 
+heures <- heure + 1; 
+mintues <-00; 
+Sinon minutes <- minutes + 1 
+Ecrire ("il est" & " " & heures & "h" & " " &minutes) 
+
+
+<!---------------- Exo 7 du mercredi 31 juil ----------------->
+
+algorithme: omniscient
+<!-- prédit l'avenir en affichant l'heure qu'il sera une seconde plus tard -->
+variables: heures, minutes, secondes : entiers;
+
+début:
+Heures <- saisi () ; 
+Minutes <- saisi (); 
+Secondes <- saisi (); 
+
+Si (heures=23 et minutes=59 et secondes=59) alors 
+Ecrire (00h00m00); 
+sinon Si (minutes=59 ) et (secondes=59) alors 
+heures <- heure + 1; minutes <- 0; 
+secondes <- 0; 
+Sinon si (secondes=59) alors 
+minutes <- minute +1;
+secondes <- 0; 
+Sinon secondes <- secondes + 1 finSi 
+Ecrire ("il est" & " " & heures & h & " " & minutes "m" & " " & secondes "s" ); 
+fin 
+
+<!-- Ecriture en Javascript -->
+
+if (heures = 23 et minutes = 59 et secondes = 59) {
+consolLog (00h00m00);
+}
+elseif (minutes = 59) && (secondes = 59) {
+heures = 0;
+minutes = 0;
+secondes = 0;
+}
+elseif (minutes = 59 ) et (secondes = 59) {
+heures = heure + 1;
+minutes = 00;
+secondes = 00;
+}
+elseif (secondes = 59) {
+minutes = minute +1;
+secondes = 00;
+}
+else{
+secondes = secondes + 1;
+}
+consolLog ("il est" & " " & heures & h & " " & minutes "m" & " "
+&secondes "s");
+fin
+
+
+<!------------------- Exo 8 du jeudi 01 Aout --------------------->
+
+
+algorithme: photocopie
+<!-- le nombre de photocopies effectuées et qui affiche la facture correspondante -->
+variables: nombre, prix: reel;
+
+début:
+nombre <- saisi (); 
+
+Si (nombre <=10) alors 
+prix <- 0.10 * nombre; 
+Sinon si (nombre <=30) alors 
+prix <- 1 + (0.09 * (nombre -10)); 
+Sinon si (nombre> 30) alors
+prix <- 2.80 + 0.08 * (nombre -30); 
+finSi Ecrire ("La facture est de " & prix & " euro"); 
+Fin 
+        
+<!------------------- Exo 9 du jeudi01 Aout --------------------->
+
+
+algorithme: imposable
+<!--  -->
+variables: age: entiers, sexe:car;
+
+début:
+age <- saisi (); 
+sexe <- saisi (); 
+
+Si (sexe=homme) && (age> 20) alors
+    Ecrire ("Il paie l'impot");
+    SinonSi (sexe = femme) && (age >= 18 ou age <= 35) alors
+        Ecrire ("Elle paie l'impot") 
+        Sinon Ecrire ("ne paie pas l'impot") 
+    finSi 
+fin 
+
+<!-- en booleen -->
+variables: age: entiers, sexe:booleen;
+
+début:
+age <- saisi (); 
+sexe <- saisi (); 
+
+Si (non femme) && (age> 20) alors
+    Ecrire ("Il paie l'impot");
+    SinonSi (femme) && (age >= 18 ou age <= 35) alors
+        Ecrire ("Elle paie l'impot"); 
+        Sinon Ecrire ("ne,paie pas l'impot"); 
+    finSi fin 
+        
+<!-- autre façonde faire -->
+variables: age: entiers, sexe:car;
+
+début:
+age <- saisi (); sexe <- saisi (); 
+testA <-sexe="h" et age> 20;
+testB <- sexe="f" et (age < 35 et age> 18) ;
+
+Si (testA ou testB) alors
+    Ecrire ("imposable");
+    Sinon
+    Ecrire ("impot false");
+finSi
+                    

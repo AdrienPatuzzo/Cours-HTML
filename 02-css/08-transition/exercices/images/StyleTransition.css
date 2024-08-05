@@ -1,0 +1,137 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: grey;
+}
+li {
+  display: inline-block;
+  margin: 20px;
+}
+button {
+  font-size: 3rem;
+  padding: 2rem;
+}
+/* -------------------------------------------------------------------------------- */
+.Bouton {
+  transition-delay: 0;
+  transition-duration: 1s;
+  transition-property: transform;
+  border: solid 2px black;
+}
+.Bouton:hover {
+  transition-delay: 0.2s;
+  transition-property: border, color;
+  border: solid 2px red;
+  color: red;
+  transform: rotateY(360deg);
+}
+/* ---------------------------------------------------------------------------------- */
+.BOUTON {
+  border: solid 2px transparent;
+  border-radius: 60px 60px;
+  background-color: orange;
+  color: white;
+  /* transition-duration: 0s;
+  transition-property: border, color, transform; */
+}
+.BOUTON:hover {
+  /* transition-duration: 0;
+  transition-property: all; */
+  border: solid 2px white;
+  cursor: pointer;
+}
+.BOUTON:hover span {
+  color: orange;
+  background-color: white;
+  transform: rotateZ(-360deg);
+}
+span {
+  width: 3rem;
+  height: 3rem;
+  display: inline-block;
+  border-radius: 50%;
+  transition: transform;
+  transition-duration: 0.5s;
+}
+/* ----------------------------------------------------------------------- */
+.Cliquez-moi {
+  border: none;
+  border-radius: 25px 25px;
+  cursor: pointer;
+  background-color: darkorchid;
+  color: white;
+  box-shadow: 8px 8px rgba(0, 0, 0, 0.205);
+  /* transition-delay: 0s; */
+  transition-duration: 0.5s;
+  transition-property: transform;
+}
+
+.Cliquez-moi:hover {
+  translate: 0 3px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.205);
+}
+.Cliquez-moi:hover:active {
+  transform: rotateX(360deg);
+}
+
+
+/*  bouton quatre */
+#quatre{
+    cursor: pointer;
+    font-size: 40px;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    /* padding: 15px 20px; */
+    /* border-radius: 20px; */
+    color: #9813a9;
+    transition-duration: 0.5s;
+    transition-property: color;
+    background-color: transparent;
+    border: none;
+    /* border-radius: 0px; */
+}
+#quatre:active{
+    color: pink;
+    transition-duration: 0s;
+}
+#quatre:hover{
+    color: black;
+}
+#quatre::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #9813a9;
+    transition: width .4s ease-in;
+    float: left;
+}
+#quatre:hover::after {
+    width: 100%;
+}
+#quatre::before{
+    margin-left: 0;
+    margin-top: 10px;
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #9813a9;
+    transition: width .4s ease-in ;
+    float: right;
+}
+#quatre:hover::before {
+    width: 100%;
+}
+
+#quatre:active::before{
+    background-color: pink;
+}
+#quatre:active::after{
+    background-color: pink;
+}

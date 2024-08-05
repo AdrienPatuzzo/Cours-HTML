@@ -1,0 +1,80 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+    height: 100dvh;
+}
+
+header, footer{
+    padding: 10px;
+    background-color: lightgreen;
+    & h1{
+        text-align: center;
+    }
+    & ul{
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+    }
+}
+
+main{
+    background-color: lightcoral;
+    height: 100%;
+    padding: 10px 3dvw;
+    overflow-y: auto;
+    /* 
+        container-type permet de transformer un élément en "query container"
+        à partir de ce moment, sa taille ne peut plus dépendre de ses enfants.
+
+        Mais on peut alors utiliser sur ses enfants les unités:
+            cqh, cqw, cqmin, cqmax...
+        qui représentent des pourcentage du container.
+
+        container-type peut prendre 3 valeurs :
+            normal, inline-size ou size
+    */
+    container-type: size;
+    /* 
+        Le nommer est optionnelle et servira pour les "query container" responsive.
+    */
+    container-name: maurice;
+    & section{
+        & div.flex{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px 0;
+            & article{
+                width: 40dvw;
+                height: 80cqh;
+                background-color: lightcyan;
+                border-radius: 10px;
+                padding: 5px;
+            }
+        }
+    }
+}
+/* 
+    Comme pour une media query
+    On peut adapter la taille des éléments à celle du container.
+    On peut faire une "query container" sans nommer les container.
+    Dans ce cas, la query s'applique à tous les container.
+*/
+@container maurice (max-height: 700px){
+    div.flex{
+        justify-content: center !important;
+    }
+    article{
+        width: 80cqw !important;
+    }
+}
+/* 
+    On peut résumer container-type et container name avec la propriété "container".
+*/

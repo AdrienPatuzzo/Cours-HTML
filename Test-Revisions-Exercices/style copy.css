@@ -1,0 +1,43 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+body {
+    background: black;
+    color: green;
+    display: grid;
+    grid-template-rows: 0fr 1fr 0fr;
+    min-height: 100vh;
+    padding: 8px;
+} 
+
+section#presentation {
+    display: grid;
+    grid-template-areas: 
+    "a a"
+    "b c"
+    "d d";
+}
+
+section#presentation div:nth-child(1){
+    background-color: blue;
+    /* Ici on déplace la 1er Div en 4ème position */
+    grid-area: d;
+}
+
+section#presentation div:nth-child(2){
+    background-color: blueviolet;
+}
+
+section#presentation div:nth-child(3){
+    background-color: yellow;
+}
+
+section#presentation div:nth-child(4){
+    background-color: green;
+}

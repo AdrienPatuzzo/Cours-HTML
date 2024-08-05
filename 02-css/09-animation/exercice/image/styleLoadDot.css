@@ -1,0 +1,116 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------ Exercice loadDot ---------------------------*/
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, rgb(33, 209, 42), rgb(177, 41, 52));
+}
+
+.sky {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.forme {
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: 100px;
+    left: 140px;
+    animation: rebond 0.9s infinite;
+    animation-delay: .1s;
+}
+
+.forme2 {
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: 60px;
+    left: 80px;
+    animation: rebond 0.9s infinite;
+    animation-delay: .2s;
+
+}
+
+.forme3 {
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: 15px;
+    left: 20px;
+    animation: rebond 0.9s infinite;
+}
+
+@keyframes rebond {
+    0% {
+        height: 50px;
+        width: 50px;
+    }
+
+    25% {
+        height: 50px;
+        width: 40px;
+    }
+
+    50% {
+        height: 30px;
+        width: 57px;
+        transform: translateY(100px);
+    }
+
+    75% {
+        height: 50px;
+        width: 57px;
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ------------------------ Exercice marquee ---------------------------*/
+
+header {
+    background-color: black;
+    width: 250vh;
+    height: 10vh;
+}
+
+.defilement {
+    display: inline-block;
+    color: white;
+    font-size: 50px;
+    white-space: nowrap;
+    animation: defilement 15s infinite linear;
+}
+
+@keyframes defilement {
+    from{
+        transform: translate3d(35%,0,0);
+    }
+    to{
+        transform: translate3d(-130%,0,0);
+    }
+}
+
+/* -------------------------------- Exercice loadCircle ---------------------------------------------------- */ 
+

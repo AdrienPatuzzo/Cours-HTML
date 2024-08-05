@@ -1,0 +1,47 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+body {
+    background: black;
+    color: green;
+    display: grid;
+    grid-template-rows: 0fr 1fr 0fr;
+    min-height: 100vh;
+    padding: 8px;
+} 
+
+section#presentation {
+    display: flex;
+    /* le flex par défaut provoque la mise en ligne */
+    /* flex-direction: column;  provoque la mise en column */
+    flex-wrap: wrap;
+    /* va pousser la div qui sort de l'écran, en bas */
+    gap: 10px;
+    justify-content: space-around;
+}
+
+section#presentation div:nth-child(1){
+    background-color: blue;
+}
+
+section#presentation div:nth-child(2){
+    background-color: blueviolet;
+}
+
+section#presentation div:nth-child(3){
+    background-color: yellow;
+}
+
+section#presentation div:nth-child(4){
+    background-color: green;
+}
+
+section#presentation .div {
+    width: 100px;
+}

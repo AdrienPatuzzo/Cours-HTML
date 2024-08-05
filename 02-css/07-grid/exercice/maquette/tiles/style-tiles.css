@@ -1,0 +1,83 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles de base */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+}
+
+/* Version tablette */
+@media (min-width: 601px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 20vw;
+    }
+}
+
+/* Version PC */
+@media (min-width: 1025px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .gallery img:nth-child(1) {
+        grid-column: span 3;
+        grid-row: span 2;
+        height: calc(40vh - 10px);
+    }
+
+    .gallery img:nth-child(4) {
+        grid-column: span 4;
+        height: calc(20vh - 10px);
+    }
+
+    .gallery img:nth-child(5) {
+        grid-row: span 2;
+        height: calc(40vh - 10px);
+    }
+
+    .gallery img:nth-child(6) {
+        grid-column: span 3;
+        height: calc(20vh - 10px);
+    }
+
+    .gallery img {
+        height: calc(20vh - 10px);
+    }
+}

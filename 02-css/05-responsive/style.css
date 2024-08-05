@@ -1,0 +1,67 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+article {
+    margin: 1rem 10px;
+    border: 1px solid grey;
+    padding: .5rem;
+}
+
+/* 
+    la media query permet d'appliquer des règles qu'à certaines condictions
+    parxemple ici, j'indique que les règles entre accolade ne s'applique que si c'est un écran 
+    et qu'il fait au moins 600px de large
+*/
+
+@media screen and (min-width: 600px) {
+    body{
+        background-color: lightgreen;
+    }
+    article{
+        display: inline-block;
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    article{
+        width: 30%;
+    }
+}
+
+/* 
+    Si le viewport est en dessous de 500px
+*/
+@media screen and (max-width: 500px) {}
+
+/* 
+    Si on tente d'imprimer la page 
+*/
+@media print {}
+
+/* Selon l'orientation du viewport */
+@media screen and (orientation: landscape) {}
+@media screen and (orientation: portrait) {}
+
+/* 
+    Selon si le navigateur (ou l'OS) est en mode dark ou non 
+*/
+@media (prefers-color-scheme: dark) {}
+@media (prefers-color-scheme: light) {}
+
+/* 
+    Si les options de réduction de mouvement sont activé 
+*/
+@media (prefers-reduced-motion: reduce) {}
+

@@ -1,0 +1,51 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* mettre des bordures régulièrement */
+    border: 1px solid red;
+}
+
+@media only screen and (min-width:400px) and (max-width: 800px) {}
+@media only screen and (400px <=width=< 800px) {}
+
+body {
+    background: black;
+    color: green;
+    display: grid;
+    /* parreil que auto 1fr auto */
+    grid-template-rows: 0fr 1fr 0fr;
+/* 
+    Si je mes que height, je vais bloquer le scroll 
+    Les tailles réel des Div dans l'inspecteur ne corréspondent pas réelement au format mobile
+    Il faut multiplier les 100vh par 0.8
+    svh et svw existe pour le telephone, mais par encore pris en compte par Firefox
+*/
+    min-height: 100vh;
+    /*  Pour que tout soit bien aligné mieux faut mettre le padding sur le body */
+    padding: 8px;
+} 
+
+section#presentation {
+    display: grid;
+}
+
+section#presentation div:nth-child(1){
+    background-color: blue;
+}
+
+section#presentation div:nth-child(2){
+    background-color: blueviolet;
+    grid-column-start: 2;
+}
+
+section#presentation div:nth-child(3){
+    background-color: yellow;
+    grid-column: span 2;
+}
+
+section#presentation div:nth-child(4){
+    background-color: green;
+}

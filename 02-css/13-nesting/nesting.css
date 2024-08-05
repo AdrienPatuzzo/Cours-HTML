@@ -1,0 +1,86 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+/* 
+    Le "&" correspond au selecteur parent, ici "body"
+*/
+    &>header{
+        background-color: lightgreen;
+        text-align: center;
+        padding: 1rem;
+/* 
+        équivalent à écrire : body > header
+*/
+        &>h1{
+            font-size: 3em;
+/* 
+            équivalent à écrire : body > header > h1:hover
+*/
+            &:hover{
+                font-style: italic;
+            }
+        }
+/* 
+        équivalent à écrire : body > header > p
+*/
+        &>p{
+            font-size: 1.5em;
+        }
+    }
+/* 
+    équivalent à : body main
+*/
+    & main{
+        width: 80%;
+        margin: auto;
+        background-color: lightcyan;
+/* 
+        équivalent à : body main > section
+        normalement tout selecteur est valide.
+        mais les navigateurs qui ne sont pas encore à jour,
+        ne supportent que les selecteurs commençant par un symbole :
+        &, ::; :, ~, +, >, ., #, [, @
+*/
+        > section{
+            margin: 20px 50px;
+            padding: 10px;
+            border-radius: 10px;
+            & h2{
+                text-indent: 20px;
+                text-decoration: underline dashed red;
+            }
+            > p{
+                margin: 1em auto;
+                text-align: justify;
+            }
+/* 
+            Dans ce cas ci le nesting selector (&) est important :
+            &:first-child équivaut à :
+            body main > section:first-child (la première section)
+            mais
+            :first-child équivaut à :
+            body main > section :first-child (le premier enfant dans la section)
+*/
+            &:first-child, &:last-child{
+                background-color: lightsalmon;
+                box-shadow: 5px 5px 3px rgba(136, 84, 64, 0.4);
+            }
+        }
+    }
+}
+
+.strong{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    :is(header) &{
+        text-decoration: underline;
+    }
+    :is(main) &{
+        font-weight: bold;
+    }
+}
