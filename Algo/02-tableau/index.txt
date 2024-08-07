@@ -1,0 +1,140 @@
+<!-- Comment on écris un tableau -->
+
+Algorithme:
+<!--  -->
+Variables: 
+Test ["joe", true, "tata"];
+i : entiers;
+<!-- tableau qui comprends les valeurs joe, le booleen true et tata--> 
+
+Début:
+pour i <- 0 à 2 faire Ecrire (Test[i]); 
+FinPour 
+fin 
+
+<!-- Autre exemple -->
+Algorithme:
+<!--  -->
+Variables: 
+Test []; <!-- En général on initialie un tableau vide --> 
+i : entiers;
+
+Début:
+pour i <- 0 à 2 faire  <!-- pareil que i=0 fais quelque chose puis i=1 quelque chose puis i=3 quelque chose --> |
+Test[] <- saisie (); <!-- Fera le nombre de tour que l'utilisateur va mettre dans les parenthèses-->            | La il fait la saisie
+FinPour                                                                                                         |
+Pour i <- 0 à taille Test faire <!-- il va calculer la taille du tableau, ici judsu'a 3 -->                 |
+Ecrire (Test [i]);                                                                                          | La il fait l'affichage
+FinPour                                                                                                     |
+Fin
+
+
+<!-- Si on veut récupérer un nom dans le tableau -->
+Algorithme: récupérer un nom dans le tableau
+<!--  -->
+Variables: 
+Test []; 
+i : entiers;
+
+Début:
+pour i <- 0 à 2 faire 
+Test[] <- saisie (); 
+FinPour Pour i <- 0 à taille Test faire 
+Si (Test[i]==="Toto" ) alors 
+Ecrire (Test [i]); 
+FinSi 
+FinPour 
+Fin 
+
+<!-- Exercice d'exemple -->
+<!-- 1)Renseigner 6 notes pour 1 seul élève 2)Afficher sa Moyenne  -->
+
+Algorithme:
+<!--  -->
+Variables: 
+Notes []; 
+i, somme: entiers; 
+moyenne: reel;
+
+Début:
+pour i <- 0 à 5 faire 
+Notes[] <- saisie ("veuillez saisir une note: ");
+somme <- Notes [i] + somme;
+FinPour
+Pour moyenne <- somme / taille Notes [];
+Ecrire (" moyenne=" & moyenne);                                                                           
+FinPour                                                                                           
+Fin
+
+<!-------------------- Exercice 2 d'exemple --------------------->
+Algorithme:
+<!--  -->
+Variables: Test [], quitter:car;
+
+Début:
+quitter <- " yes"; 
+Tant que (quitter <> "n") faire <!-- ici "tant que" boucle a l'infini, mais je peux imposer une limite de boucle avec "For"-->
+quitter <- saisie ("Renseigner une nouvelle note ou tapper "n" pour terminer"); 
+
+Si (quitter <> "n") alors
+Test [] <- saisie (); 
+fin Si 
+Fin tant que 
+fin 
+
+<!----------------------- Tableau multidimensionnel -------------------->
+Algorithme:
+<!--  -->
+Variables: Tab []: car;
+Début:
+Pour i <- 0 à Taille Tab faire 
+    pour j <- 0 à Taille Tab [i] faire 
+    Ecrire (tab[i][j]) 
+    FinPour 
+FinPour 
+fin 
+
+<!------------------------- Exercie 3 tableau normaux -------------------->
+Algorithme: calcule
+<!-- Ecrire un algorithme permettant  de calculer la somme, produit et moyenne des  éléments d’un tableau. -->
+Variables: 
+elements[]; 
+i, somme, produit, moyenne: Entiers;
+
+Début:
+produit <- 1; 
+somme <- 0; 
+moyenne <- 0; 
+
+pour i <- 0 à 2 faire 
+elements [] <- saisie (); 
+FinPour 
+Pour i <- 0 à taille elements [] -1 faire
+somme <- somme + elements [i]; 
+produit <- produit x elements [i];
+FinPour moyenne <- somme / taille elements []; 
+Ecrire ("la somme est de "& somme & " " & " le produit est de "& produit & " " & " la moyenne est de " & moyenne)
+fin
+
+
+<!------------------------- Exercie 4 tableau normaux  -------------------->
+Algorithme: Occurence
+<!-- Ecrire un algorithme qui permet de trouver le nombre d'occurrence d'un élément dans un tableau. -->
+Variables: tab []; var, occurrence, i, j: Entiers
+
+Début:
+Occurence <- 0;
+j <- 0;
+Pour i <- 0 à 4 faire
+    tab [] <- saisie ();
+FinPour
+Tant que (j < taille tab ) faire
+    Si (var = tab [j]) alors
+    occurence <- occurence + 1;
+    FinSi
+J <- j + 1;
+Fin tant que
+Ecrire (var & " apparait" & occurence & "fois dans le tableau" ) 
+fin 
+
+

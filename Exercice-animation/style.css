@@ -1,0 +1,140 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
+    font-size: 20px;
+}
+
+/* body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    padding: 8px;
+    font-size: 25px;
+}  */
+
+/* @keyframes animButton {
+    0% {
+        transform: translateY(0%);
+    }
+    20% {
+        transform: translateY(250px) rotateX(60deg);
+    }
+    40% {
+        transform: translateX(250px) rotateZ(-180deg);
+    }
+    60%{
+        transform: translateZ(250px) rotateY(100deg);
+    }
+    80%{
+        transform: translate(250px);
+    }
+    100%{
+        transform: translate(0%) rotateZ(360deg);
+    }
+} */
+
+/* @keyframes animButtonHover {
+    /* je peux écrire directement la destination "to" 
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+} */
+
+/* button#anim {
+    width: fit-content;
+    height: fit-content;
+    animation: animButton 5s linear reverse;
+}
+
+button{
+    font-size: 25px;
+}
+
+button#anim:hover {
+    width: fit-content;
+    height: fit-content;
+    animation: animButtonHover 1s linear forwards;
+} */
+
+/* @keyframes display-transition {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+} */
+
+/* section#presentation span {
+    display: none;
+}
+
+section#presentation div:hover{
+    cursor: pointer;
+    animation: display-transition 1s 10s linear forwards;
+} */
+
+
+.accordeon ul {
+    list-style:none;
+    width : 300px;
+    }
+    
+    .accordeon ul li {
+    display:block;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    list-style:none;
+    width : 300px;
+    height:30px;
+    background-color: #6FF;
+    border-radius:7px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+    transition:  height 0.3s ease-in-out;
+    -moz-transition:  height 0.3s ease-in-out;
+    -webkit-transition:  height 0.3s ease-in-out;
+    -o-transition:  height 0.3s ease-in-out;
+    }
+    
+    .accordeon ul li .titre {
+    display:block;
+    margin:0;
+    padding:10px;
+    height:19px;
+    border-top:  #f0f0f0 1px solid;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:80%;
+    color:#000;
+    background: grey;
+    }
+    
+    .accordeon ul li div {
+    margin:0;
+    overflow:auto;
+    padding:10px;
+    height:150px;
+    background: grey;
+    }
+    
+    .accordeon  ul li:hover {
+    height:150px;
+    }
+    
+    .accordeon:hover ul li .titre:hover {
+    color:#fff;
+    background:#000;
+    font-size:80%;
+    }
+    
+    .accordeon ul li .titre:hover {
+    cursor:pointer;
+    }

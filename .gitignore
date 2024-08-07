@@ -1,0 +1,5 @@
+*.zip
+*.mp4
+fontawesome-free-6.6.0-web/
+vendor/
+node_modules/

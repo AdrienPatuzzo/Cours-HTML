@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours CSS - SASS</title>
+    <link rel="stylesheet" href="./css/test-sass.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Les bases de SASS et SCSS</h1>
+    </header>
+    <main>
+        <ul>
+            <li>
+                Pour installer SASS on utilisera npm :
+                <br>
+                <strong>npm install -g sass</strong>
+            </li>
+            <li>
+                La commande pour compiler du sass en CSS est : <br>
+                <strong>sass pathToFile.sass pathToFile.css</strong> <br> 
+                (exemple, ouvrir le terminal intégrer du fichier test-sass.sass et faire 
+                sass .\test-sass.sass ../css/test.css) <br>
+                Si problème, ouvrir powershell en administrateur dans windows et écrire : <br>
+                set-executionpolicy unrestricted puis recommencer la manip dans le terminal intégrer.
+            </li>
+            <li>
+                Si on souhaite que cela se fasse automatiquement à chaque sauvegarde : <br>
+                <strong>sass --watch pathToFile.sass pathToFile.CSS</strong>
+            </li>
+            <li>
+                Si on souhaite surveiller tout un dossier : <br>
+                <strong>sass --watch pathToFolderSass:pathToFolderCSS</strong>
+            </li>
+            <li>
+                On peut minimiser automatiquement le css avec : <br>
+                <strong>sass --watch pathToFolderSass:pathToFolderCSS --style compressed</strong>
+            </li>
+        </ul>
+    </main>
+    <section>
+        <h2>
+            <span>SASS vs SCSS</span>
+        </h2>
+        <p>
+            Les commandes et fonctionnalités sont les même entre SASS et SCSS.
+            Le seuls différences sont au niveau de l'extension du fichier ".sass" ou ".scss"
+            et de la synthaxe. <br>
+            SCSS s'écrit comme du css. <br>
+            SASS s'écrit sans accolade ni point virgule. <br>
+            Pour indiquer qu'une propriété est dans un selecteur, on utilisera une indentation.
+        </p>
+    </section>
+    <div class="copy">&copy;</div>
+    <div class="menu">Menu</div>
+    <ul>
+        <li class="truc1">
+            TRUC 1
+        </li>
+        <li class="truc2">
+            TRUC 2
+        </li>
+        <li class="truc3">
+            TRUC 3
+        </li>
+        <li class="truc4">
+            TRUC 4
+        </li>
+        <li class="truc5">
+            TRUC 5
+        </li>
+    </ul>
+</body>
+</html>

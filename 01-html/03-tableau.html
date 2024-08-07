@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours HTML - Les tableaux</title>
+    <style>
+        table, td, th
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <!-- table indique un tableau -->
+    <table>
+        <!-- tr indique une rangée du tabeau -->
+        <tr>
+            <!-- td une case du tableau -->
+            <td>Fruit</td>
+            <td>Couleur</td>
+        </tr>
+        <!-- chaque rangées doit avoir le même nombre de case -->
+        <tr>
+            <td>Banane</td>
+            <td>jaune</td>
+        </tr>
+        <tr>
+            <td>Cerise</td>
+            <td>rouge</td>
+        </tr>
+    </table>
+    <table>
+        <!-- En tête du tableau -->
+        <thead>
+            <tr>
+                <!-- Case d'en tête du tableau -->
+                <th colspan="2">fruit</th>
+                <th colspan="2">legume</th>
+            </tr>
+        </thead>
+        <!-- Corps du tableau -->
+        <tbody>
+            <tr>
+                <td>pomme</td>
+                <td>crise</td>
+                <td>carotte</td>
+                <td rowspan="2">aubergine</td>
+            </tr>
+            <td>banane</td>
+            <td colspan="2">tomate</td>
+        </tbody>
+        <!-- Pied du tableau -->
+        <tfoot>
+            <tr>
+                <td>Commentaire</td>
+                <td colspan="3">Mangez 5 fruits et légumes par jour</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,189 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+    Liste des étapes clefs nommé comme on le souhaite
+*/
+@keyframes cloud{
+    /* 
+        Point de départ de l'animation
+    */
+    From{
+        right: -30vw;
+        height: 5px;
+        width: 5px;
+    }
+    /* 
+    On peut ajouter autant d'étape clef que voulu sous la forme de pourcentage:
+    */
+    25%{
+        top: 100vh;
+    }
+    50%{
+        top: 100px;
+    }
+    75%{
+        height: 100px;
+        width: 100px;
+    }
+    /* 
+        Fin de l'animation
+    */
+    to{
+        right: 100vw;
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@keyframes darkcloud{
+    /* 
+        from et to peuvent être premplacé par 0% et 100%
+    */
+    0%{background-color: rgb(173, 86, 86);}
+    50%{background-color: rgb(54, 160, 50);}
+    100%{background-color: rgb(212, 79, 79);}
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sky{
+    height: 100%;
+    background: linear-gradient(to right, #5f3263, #e6542f);
+}
+
+.cloud{
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    /* 
+        Nom de l'animation (choisis dans le @keyframes)
+    */
+    animation-name: cloud;
+    /* 
+        Durée de l'animation
+    */
+    animation-duration: 10s;
+    /* 
+        direction de l'animation (du début à la fin, ou de la fin vers le début)
+    */
+    animation-direction: alternate;
+    /* 
+        nombre de fois que l'animation doit se jouer
+    */
+    animation-iteration-count: infinite;
+    /* 
+        Rythme auquel se joue l'animation
+    */
+    animation-timing-function: ease-in-out;
+    /* 
+    Temps d'attente avant que l'animation se lance
+    */
+    animation-delay: .1s;
+}
+
+.cloud div{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    /* 
+        Résumé de toute les propriétés d'animation
+    */
+    animation: darkcloud 8s 3s linear 1;
+    /* 
+        Dans quel état doit se trouver l'élément une fois l'animation terminé
+    */
+    animation-fill-mode: forwards;
+}
+
+.part1{
+    top: -35%;
+}
+
+.part2{
+    left: 35%;
+}
+
+.part3{
+    left: -35%;
+}
+
+/* --------------------------------- SCROLL ------------------------------------- */
+
+@keyframes scrollme {
+    from{ scale: 0 1;} 
+    to{ scale: 1;}
+}
+
+@keyframes scrollus {
+    from{
+        left: -20px;
+        rotate: 0;
+    }
+    to{
+        left: 100vw;
+        rotate: 1440deg;
+    }
+}
+
+body.scroll{
+    overflow: auto;
+    height: auto;
+}
+
+.scroll p{
+    margin-bottom: 20vh;
+}
+
+.scroll header{
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: lightcyan;
+}
+
+.scroll .progress{
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: green;
+    scale: 0 1;
+    /* 
+        permet de changer l'origine de l'élément
+    */
+    transform-origin: left;
+    /* 
+        j'indique que le navigateur doit choisir lui même la durée de l'animation (ne fonctionne pas sur firefox e safari)
+    */
+    animation: scrollme auto linear;
+    /* 
+        j'indique au navigateur que la timeline (chronologie) ne se base plus sur une durée mais sur le scroll
+        le scroll tout en haut représente 0% et tout en bas 100%
+    */
+    animation-timeline: scroll();
+}
+
+.scroll .ball{
+     translate: -100% 0;
+     position: absolute;
+     bottom: 20px;
+     border-radius: 50%;
+     background-image: radial-gradient(at 30% 30%, rgb(251, 199, 199), rgb(255, 140, 105));
+     width: 20px;
+     aspect-ratio: 1/1;
+     animation: scrollus auto linear;
+     animation-timeline: scroll();
+}

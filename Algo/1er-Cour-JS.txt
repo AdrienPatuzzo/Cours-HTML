@@ -1,0 +1,11 @@
+serveur                      conteneurisation              (côté client)           
+sequentiel                                                 particularité
+(terminal)                                                 (navigateur)
+
+Javascript                   -> docker                  -> Js => DOM (document object model)
+PHP                                                     -> PHP => données
+
+ecmascript (es6 sorti en 2015 qui est le plus utiliser) permet de compilé et rendre les fonctions interprétable par tout les navigateurs
+(En utilisant des technologies comme l'API Electron (on y développe en html, css, js), on pourrait faire des applications windows)
+
+(Sites en cas de pb: mdn, w3school, stackoverflow)
