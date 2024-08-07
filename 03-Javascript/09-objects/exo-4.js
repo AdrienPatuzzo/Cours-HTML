@@ -3,8 +3,6 @@
 // Ajoutez des méthodes "déposer" et "retirer" à cet objet pour effectuer des opérations sur le solde et les ajouter dans l'historique.
 // Ajoutez une méthode "afficherHistorique" qui affiche toutes les opérations dans l'historique.
 
-
-
 let compte = {
     nom: 'Patuzzo',
     solde: 1000,
@@ -12,16 +10,16 @@ let compte = {
     deposer: function(nombre1) {
         this.solde += nombre1;
         console.log(this.solde);
-        this.historique.push(nombre1);
+        this.historique.push(`depot ${nombre1} €`);
     },
     retirer: function(nombre2) {
         this.solde -= nombre2;
         console.log(this.solde);
-        this.historique.push(nombre2);
+        this.historique.push(`retrait ${nombre2} €`);
     },
     afficherHistorique: function() {
         console.log(this.historique);
-    },
+    }
 }
 
 // exemple de process (avec solde initial de 1000€)
