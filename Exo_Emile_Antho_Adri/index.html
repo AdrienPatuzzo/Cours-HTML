@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="exo3_grpe.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Jeu de Devinettes</h1>
+    </header>
+
+    <div class="container">
+        <label for="difficulty">Choisissez un niveau de difficulté :</label>
+        <select id="difficulty">
+            <option value="20">Facile (20 coups)</option>
+            <option value="15">Moyen (15 coups)</option>
+            <option value="10">Difficile (10 coups)</option>
+        </select>
+        <button onclick="startGame()">Commencer le jeu</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <footer>
+        <div class="footer-buttons">
+            <button class="button" onclick="showEasyHint()">Indice Facile</button>
+            <button class="button" onclick="openCodingTips()">Indice Moyen</button>
+            <button class="button" onclick="closePage()">Indice Difficile</button>
+        </div>
+    </footer>
+
+    <!-- Modale pour l'indice facile -->
+    <div id="easyHintModal" class="modal">
+        <div class="modal-content">
+            <p>Le nombre est peut-être divisible par 7 !</p>
+            <button class="modal-close" onclick="closeModal()">Fermer</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

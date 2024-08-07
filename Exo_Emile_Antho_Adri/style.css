@@ -1,0 +1,193 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(135deg, #2c3e50, #4c8c8c);
+    /* Dégradé de bleu foncé à turquoise */
+    color: #E0F7FA;
+    /* Couleur de texte claire */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    /* Évite les barres de défilement horizontales */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Hauteur de la fenêtre pour centrer le contenu verticalement */
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    /* Fond semi-transparent plus clair */
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    /* Centre le contenu du header */
+    align-items: center;
+}
+
+header h1 {
+    color: #FF9800;
+    /* Couleur orange vif pour le titre */
+    margin: 0;
+    font-size: 2em;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    /* Fond semi-transparent pour le conteneur */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    /* Ombre cyan pour effet Matrix */
+    padding: 20px;
+    border: 2px solid #00BCD4;
+    /* Bordure cyan inspirée par Matrix */
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+select {
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #FF9800;
+    /* Bordure orange vif */
+    border-radius: 6px;
+    margin: 10px 0;
+    background: #333;
+    /* Fond sombre pour une meilleure lisibilité */
+    color: #E0F7FA;
+    /* Texte en clair */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+    /* Ombre orange pour effet Fallout */
+}
+
+select:focus {
+    outline: none;
+    border-color: #FF5722;
+    /* Couleur de bordure au focus */
+}
+
+button {
+    background: linear-gradient(135deg, #FF9800, #FF5722);
+    /* Dégradé orange */
+    color: #FFF;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.7);
+    /* Ombre orange pour effet Fallout */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #FF5722, #FF9800);
+}
+
+button:active {
+    background: #FF5722;
+    /* Couleur de fond au clic */
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.9);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.6);
+    /* Fond semi-transparent plus clair */
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    /* Centre le contenu du footer */
+    align-items: center;
+}
+
+footer .footer-buttons {
+    margin-top: 10px;
+}
+
+footer .footer-buttons .button {
+    display: inline-block;
+    background: linear-gradient(45deg, #FF5722, #00BCD4, #FF9800);
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-shadow: 1px 1px 4px #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer .footer-buttons .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 87, 34, 0.9);
+}
+
+/* Style pour les messages */
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Style pour la modale */
+.modal {
+    display: none;
+    /* Cachée par défaut */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #333;
+    color: #E0F7FA;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.modal-close {
+    margin-top: 10px;
+    background: #FF5722;
+    border: none;
+    border-radius: 6px;
+    color: #FFF;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #FF9800;
+}
