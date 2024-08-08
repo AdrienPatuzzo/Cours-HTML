@@ -1,29 +1,27 @@
-// faire en sorte qu'en appelant marc, l'age passe de 20 a 19
+// faire en sorte qu'en appelant marc, l'age passe de 20 a 21
 
 let tabUsers = [
     {
-        nom:'john',
+        nom: 'john',
         age: 15,
     },
     {
-        nom:'Marc',
+        nom: 'Marc',
         age: 20,
     },
 ];
 
-const modifierAge= (newAge) => {
-    let tabnewAge = [];
-    for (const user of tabUsers){
-        const { age } = user;
-        if (newAge === age) {
-            tabnewAge.push(newAge);
+function modifierAge(nom, nouvelAge) {
+    // Parcourir le tableau pour trouver l'utilisateur avec le nom donné
+    for (let i = 0; i < tabUsers.length; i++) {
+        if (tabUsers[i].nom.toLowerCase() === nom.toLowerCase()) {
+            // Mettre à jour l'âge de l'utilisateur
+            tabUsers[i].age = nouvelAge;
+            break; // Sortir de la boucle une fois l'utilisateur trouvé et mis à jour
         }
     }
-    const exist = (tabnewAge.length = 0) ? `${newAge}` : `${newAge}`;
-    console.log(exist);
-};
+}
 
-
-modifierAge('marc', 19)
+modifierAge('marc', 21)
 console.log(tabUsers);
 

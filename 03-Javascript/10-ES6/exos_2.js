@@ -7,35 +7,31 @@
 // destructuration et spread operator
 // console.log du tableau d'origine modifié
 
+
 let tabUtilisateurs = [];
 
 let utilisateur1 = {
     nom: 'george abidbol',
     service: 'homme le plus class du monde'
-}
+};
 let utilisateur2 = {
     nom: 'Maité la grosse',
     service: 'cuisinière'
+};
+
+tabUtilisateurs.push(utilisateur1, utilisateur2); // Ajout des utilisateurs au tableau
+
+function changerService(nom, nouveauService, tableau) {
+    let nouveauTableau = tableau.map(utilisateur => { // Copie du tableau original pour créer un nouveau tableau
+        if (utilisateur.nom.toLowerCase() === nom.toLowerCase()) { // Vérifie si le nom correspond, en ignorant la casse
+            return { ...utilisateur, service: nouveauService }; // Retourne un nouvel objet utilisateur avec le service mis à jour
+        }
+        return utilisateur; // Retourne l'utilisateur d'origine
+    });
+    return nouveauTableau;
 }
 
-tabUtilisateurs = [...tabUtilisateurs, utilisateur1, utilisateur2];
+let tableauMisAJour = changerService('george abidbol', 'chanteur', tabUtilisateurs); // Appel de la fonction pour changer le service de l'utilisateur
 
-function changeServiceByName (newUtilisateurs, newService, ...args){
-    let newtabUtilisateurs = [];
-    for (const utilisateur of args){
-        const {nom, Service} = utilisateur;
-        if (nom === nom){
-            newUtilisateurs = [...newUtilisateurs, {nom: utilisateur, service: newService}];
-        }
-        else{
-        newUtilisateurs = [...newUtilisateurs, utilisateur];
-        }
-    }
-    return newtabUtilisateurs;
-}
-tabUtilisateurs = [...newtabUtilisateurs];
-
-console.log(newtabUtilisateurs);
-changeServiceByName(``, ...tabUtilisateurs);
-
-// Exo pas terminer et pas corriger
+console.log(tableauMisAJour); // Afficher le tableau mis à jour
+console.log(tabUtilisateurs); // Afficher le tableau de base pour vérifier qu'il n'a pas changé
