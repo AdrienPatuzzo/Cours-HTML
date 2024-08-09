@@ -12,12 +12,10 @@ let tabUsers = [
 ];
 
 function modifierAge(nom, nouvelAge) {
-    // Parcourir le tableau pour trouver l'utilisateur avec le nom donné
     for (let i = 0; i < tabUsers.length; i++) {
         if (tabUsers[i].nom.toLowerCase() === nom.toLowerCase()) {
-            // Mettre à jour l'âge de l'utilisateur
-            tabUsers[i].age = nouvelAge;
-            break; // Sortir de la boucle une fois l'utilisateur trouvé et mis à jour
+            tabUsers[i].age = nouvelAge;// Mettre à jour l'âge de l'utilisateur
+            break;
         }
     }
 }
