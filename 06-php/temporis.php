@@ -31,5 +31,8 @@ class Temporis {
 }
 
 $tempInstance = new Temporis("hiver", -2);
-echo $tempInstance->contrib_temp();
-echo $tempInstance;
+$tempInstance2 = new Temporis("été", 22);
+// echo $tempInstance->contrib_temp();
+// echo $tempInstance;
+echo $tempInstance->saison . PHP_EOL;
+echo $tempInstance2->saison;
