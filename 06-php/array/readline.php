@@ -19,10 +19,13 @@ $limit = 5;
 $count = 0;
 while ($count < $limit) {
     $saisi = readline("Ecrire n'importe quoi, sinon écrire ';' pour sortir) : ");
-    if (strtolower($saisi) === ';') {
+    if (is_numeric($saisi) ) {
+        echo "vous ne pouvez pas ajouter de chiffre dans le tableau" . PHP_EOL;
+    } elseif (strtolower($saisi) === ';') {
         break; 
+    } else {
+        $myTab[] = $saisi; 
     }
-    $myTab[] = $saisi; 
     $count++; 
 }
 echo "Voici votre tableau" . PHP_EOL;
