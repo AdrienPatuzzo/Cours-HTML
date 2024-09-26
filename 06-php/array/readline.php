@@ -9,7 +9,7 @@
 // echo gettype($nombre);
 
 $myTab = [];
-$saisi = readline("Ecrire n'importe quoi : ");
+// $saisi = readline("Ecrire n'importe quoi : ");
 // for ($i=0; $i < 4; $i++) { 
 //     array_push($myTab, $saisi);
 // }
