@@ -39,14 +39,6 @@ class Concession {
         $this->tabVoiture = $tabVoiture;
         return $this;
     }
-
-    public function __toString()
-    {
-        $txt = '';
-        $txt .= "Nom du garage : $this->nomGarage\n";
-        $txt .= "Tableau des voitures : $this->tabVoiture\n";
-        return $txt;
-    }
 }
 
 

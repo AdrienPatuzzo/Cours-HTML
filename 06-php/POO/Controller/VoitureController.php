@@ -9,25 +9,11 @@ class VoitureController {
         $this->voiture = new Voiture();
     }
 
-
-    /**
-     * Get the value of voiture
-     *
-     * @return object
-     */
-    public function getVoiture(): object {
-        return $this->voiture;
+    public function setVitesse($newVitesse){
+        $this->voiture->setVitesse($newVitesse);
     }
 
-    /**
-     * Set the value of voiture
-     *
-     * @param object $voiture
-     *
-     * @return self
-     */
-    public function setVoiture(object $voiture): self {
-        $this->voiture = $voiture;
-        return $this;
+    public function setPuissance($newPuissance){
+        $this->voiture->setPuissance($newPuissance);
     }
 }
