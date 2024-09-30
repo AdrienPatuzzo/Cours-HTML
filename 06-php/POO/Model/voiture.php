@@ -4,7 +4,7 @@ class Voiture {
     private int $vitesse;
     private int $puissance;
 
-    public function __construct($vitesse, $puissance)
+    public function __construct($vitesse = 50, $puissance = 7)
     {
         $this->vitesse = $vitesse;
         $this->puissance = $puissance;

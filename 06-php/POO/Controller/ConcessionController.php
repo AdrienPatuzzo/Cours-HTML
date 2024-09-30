@@ -1,6 +1,6 @@
 <?php
 
-require 'Model/Concession.php';
+require ROOT_PATH . './Model/Concession.php';
 
 class ConcessionController {
     private object $Concession;
@@ -10,8 +10,12 @@ class ConcessionController {
     }
 
     public function saveVoiture($newVoiture){
-        $tab = [];
+        $tab = $this->Concession->getTabVoiture();
         $tab[] = $newVoiture;
         $this->Concession->setTabVoiture($tab);
+    }
+
+    public function showAllCar(){
+        return $this->Concession->getTabVoiture();
     }
 }
