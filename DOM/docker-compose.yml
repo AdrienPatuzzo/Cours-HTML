@@ -1,0 +1,15 @@
+services:
+  dom:
+    container_name: dom
+    build: .
+    volumes:
+      - ./public/:/usr/share/nginx/html
+    ports:
+      - "8080:80"
+    networks:
+      - dom
+
+networks:
+  dom:
+    external: true
+    name: dom
